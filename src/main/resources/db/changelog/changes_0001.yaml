@@ -1,0 +1,144 @@
+databaseChangeLog:
+  - changeSet:
+      id: "0001"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: Product
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(200)
+              - column:
+                  name: price
+                  type: FLOAT
+              - column:
+                  name: product_type
+                  type: VARCHAR(100)
+  - changeSet:
+      id: "0002"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: Computer
+            columns:
+              - column:
+                  name: computer_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: processor
+                  type: VARCHAR(100)
+              - column:
+                  name: RAM
+                  type: FLOAT
+              - column:
+                  name: additional_accessories
+                  type: VARCHAR(300)
+  - changeSet:
+      id: "0003"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: Phone
+            columns:
+              - column:
+                  name: phone_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: color
+                  type: VARCHAR(100)
+              - column:
+                  name: capacity
+                  type: int
+              - column:
+                  name: additional_accessories
+                  type: VARCHAR(300)
+  - changeSet:
+      id: "0004"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: Electronics
+            columns:
+              - column:
+                  name: electronics_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: additional_accessories
+                  type: VARCHAR(300)
+  - changeSet:
+      id: "0005"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: cart
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+  - changeSet:
+      id: "0006"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: cart_product_ids
+            columns:
+              - column:
+                  name: cart_id
+                  type: BIGINT
+              - column:
+                  name: product_id
+                  type: BIGINT
+  - changeSet:
+      id: "0007"
+      author: "igor"
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: cart_id
+                  type: BIGINT
+              - column:
+                  name: city
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: TIMESTAMP

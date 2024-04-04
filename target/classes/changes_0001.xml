@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="0001" author="igor">
+        <addColumn tableName="Product">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(200)"/>
+            <column name="price" type="VARCHAR(200)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="0002" author="igor">
+        <addColumn tableName="Computer">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="processor" type="VARCHAR(100)"/>
+            <column name="RAM" type="DOUBLE"/>
+            <column name="additional_accessories" type="VARCHAR(300)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="0003" author="igor">
+        <addColumn tableName="Phone">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="color" type="VARCHAR(100)"/>
+            <column name="capacity" type="INT"/>
+            <column name="additional_accessories" type="VARCHAR(300)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="0004" author="igor">
+        <addColumn tableName="Electronics">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
